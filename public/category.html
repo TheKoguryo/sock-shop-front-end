@@ -37,6 +37,21 @@
 
     <link rel="shortcut icon" href="favicon.png">
 
+    <!-- OCI Browser Agent-->
+    <script>
+        window.apmrum = (window.apmrum || {});
+        window.apmrum.serviceName='front-end';
+        window.apmrum.webApplication='sockshop';
+        window.apmrum.ociDataUploadEndpoint='$(DATA_UPLOAD_ENDPOINT)';
+        window.apmrum.OracleAPMPublicDataKey='$(PUBLIC_DATA_KEY)';
+  
+        window.apmrum.traceSupportingEndpoints =  [
+          { headers: [ 'APM'], hostPattern: 'http://138.2.117.77'},
+          { headers: [ ], hostPattern: '.*'} // block headers for everything else
+        ];
+    </script>
+    <script async crossorigin="anonymous" src="$(DATA_UPLOAD_ENDPOINT)/static/jslib/apmrum.min.js"></script>
+    <!-- OCI Browser Agent-->    
 
 </head>
 
